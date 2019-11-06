@@ -7,9 +7,7 @@ class ScrapeJob < ApplicationJob
   def perform(*args)
     url = fetch_shoes_url
     url.each do |shoe|
-      p shoe
       data = fetch_shoe_data(shoe)
-      p data
       Shoe.create(data)
     end
   end
