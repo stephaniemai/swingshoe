@@ -5,7 +5,8 @@ def fetch_shoes_url
   html_content = open('https://swivells.com/en/c/ankle-boots-and-derbies').read
   doc = Nokogiri::HTML(html_content)
   shoes = doc.search('.product-card .info .name a')
-  @shoes = shoes.take(5).map do |shoe|
+  # @shoes = shoes.take(5).map do |shoe|
+  @shoes = shoes.map do |shoe|
     uri = URI.parse(shoe.attributes["href"].value)
     uri.scheme = "https"
     uri.host = "www.swivells.com"

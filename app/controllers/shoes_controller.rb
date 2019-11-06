@@ -1,6 +1,6 @@
 class ShoesController < ApplicationController
   def index
-    @shoes = Shoe.all
+    @shoes = Shoe.all.sort_by(&:price)
   end
 
   def show

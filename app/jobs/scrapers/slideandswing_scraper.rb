@@ -5,7 +5,8 @@ def fetch_shoes_url
   html_content = open('https://www.slideandswing.es/en/11-for-her').read
   doc = Nokogiri::HTML(html_content)
   shoes = doc.search('article a.text-muted')
-  @shoes = shoes.take(5).map do |shoe|
+  # @shoes = shoes.take(5).map do |shoe|
+  @shoes = shoes.map do |shoe|
     uri = URI.parse(shoe.attributes["href"].value)
     uri.scheme = "https"
     uri.host = "www.slideandswing.es"
