@@ -1,5 +1,5 @@
-require_relative 'scrapers/slideandswing_scraper'
-# require_relative 'scrapers/swivells_scraper'
+# require_relative 'scrapers/slideandswing_scraper'
+require_relative 'scrapers/swivells_scraper'
 
 class ScrapeJob < ApplicationJob
   queue_as :default
