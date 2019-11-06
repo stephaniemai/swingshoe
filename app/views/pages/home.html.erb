@@ -1,9 +1,16 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1520012538304-01a178a8d217?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);">
   <div class="container">
-    <h1>Find your next pair of swing shoes!</h1>
-    <p>All the brands and models of your favorite swing dance shoes, at one glance</p>
+    <h1>Swingshoe</h1>
+    <p>Find your next pair of swing dance shoes</p>
     <!-- <a class="btn btn-flat" href="#">Apply now</a> -->
   </div>
+</div>
+<!-- <div>
+  <%= render partial: 'shared/shoe', collection: @shoes  %>
+</div> -->
+
+<div>
+  <%= yield :shoe %>
 </div>
 
 

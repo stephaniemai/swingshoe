@@ -1,6 +1,5 @@
-
 <div class='cards'>
-  <% @shoes.each do |shoe|%>
+
     <div class="card">
       <%= image_tag shoe.image_url %>
       <div class="card-infos">
@@ -8,8 +7,8 @@
           <h2><%= shoe.model %></h2>
           <p><%= shoe.brand %></p>
         </div>
-        <h2 class="card-info-pricing">€ <%= shoe.price %></h2>
+        <h2 class="card-info-pricing"><%= shoe.price %> €</h2>
       </div>
     </div>
-  <% end %>
+
 </div>
