@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 data = {
+  id: 1,
   brand: "Slide and Swing",
   shoe_list_url: 'https://www.slideandswing.es/en/11-for-her',
   scraper_description: "Slide and swing - For Her",
@@ -22,6 +23,7 @@ Scraper.create(data)
 
 
 data = {
+  id: 2,
   brand: "Swivells",
   shoe_list_url: 'https://swivells.com/en/c/ankle-boots-and-derbies',
   scraper_description: "Swivells",
@@ -34,3 +36,17 @@ data = {
 }
 
 Scraper.create(data)
+
+# data = {
+#   brand: "Saint Savoy",
+#   shoe_list_url: 'https://www.saintsavoy.com/en/product-category/ladies-shoes/',
+#   scraper_description: "Saint Savoy - For Her",
+#   links: '',
+#   host: 'www.saintsavoy.com',
+#   model: 'doc.css(".product-info h1").text.strip',
+#   price: 'doc.css("p.price span").text.strip.to_i',
+#   image_url: 'doc.css(".product-images img")[0][\'src\']',
+#   description: 'doc.css(\'#additional .accordion-inner p\').text'
+# }
+
+# Scraper.create(data)
