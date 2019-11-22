@@ -1,5 +1,4 @@
 require 'open-uri'
-require 'nokogiri'
 require 'bootsnap'
 require 'watir'
 require 'webdrivers'
@@ -17,7 +16,8 @@ class ScrapeSaintSavoyJob < ScrapeJob
     b.divs(class: 'image-glow').each do |div|
       shoes.push(div.a.href)
     end
-    @shoes = shoes.take(2).map do |shoe|
+    # @shoes = shoes.take(2).map do |shoe|
+    @shoes = shoes.map do |shoe|
       uri = URI.parse(shoe)
       uri.scheme = "https"
       uri.host = "www.saintsavoy.com"
@@ -25,5 +25,28 @@ class ScrapeSaintSavoyJob < ScrapeJob
       uri.fragment = nil
       uri.to_s
     end
+    @shoes.each do |shoe|
+      data = fetch_shoe_data(shoe)
+      Shoe.create(data)
+    end
+  end
+
+  def fetch_shoe_data(url)
+    html_content = open(url).read
+    doc = Nokogiri::HTML(html_content)
+    brand = 'Saint Savoy'
+    model = doc.css(".product-info h1").text.strip
+    price = doc.css("p.price span").text.strip.to_i
+    image_url = doc.css('.product-images img')[0]['src']
+    description = doc.css('#additional .accordion-inner p').text
+
+    {
+      url: url,
+      brand: brand,
+      model: model,
+      price: price,
+      image_url: image_url,
+      description: description
+    }
   end
 end
