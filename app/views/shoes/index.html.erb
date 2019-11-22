@@ -1,15 +1,16 @@
-
 <div class='cards'>
   <% @shoes.each do |shoe|%>
-    <div class="card">
-      <%= image_tag shoe.image_url %>
-      <div class="card-infos">
-        <div>
-          <h2><%= shoe.model %></h2>
-          <p><%= shoe.brand %></p>
-        </div>
-        <h2 class="card-info-pricing">€ <%= shoe.price %></h2>
+  <div class="card">
+    <%= link_to shoe.url, target: "_blank" do %>
+    <%= image_tag shoe.image_url  %>
+    <div class="card-infos">
+      <div>
+        <h2><%= shoe.model %></h2>
+        <p><%= shoe.brand %></p>
       </div>
+      <h2 class="card-info-pricing">€ <%= shoe.price %></h2>
     </div>
+    <% end %>
+  </div>
   <% end %>
 </div>
