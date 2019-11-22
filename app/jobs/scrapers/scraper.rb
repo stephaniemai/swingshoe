@@ -14,16 +14,18 @@ def fetch_shoes_url(scraper)
     uri.fragment = nil
     uri.to_s
   end
+  @shoes = @shoes.uniq
+  @shoes
 end
 
 def fetch_shoe_data(url, scraper)
   html_content = open(url).read
   doc = Nokogiri::HTML(html_content)
   brand = scraper.brand
-  model = scraper.model
-  price = scraper.price
-  image_url = scraper.image_url
-  description = scraper.description
+  model = eval(scraper.model)
+  price = eval(scraper.price)
+  image_url = eval(scraper.image_url)
+  description = eval(scraper.description)
 
   {
     url: url,
