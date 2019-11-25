@@ -5,10 +5,15 @@ require 'webdrivers'
 
 class ScrapeSaintSavoyJob < ScrapeJob
   queue_as :default
-
   def perform(*args)
+    params = %w[--disable-infobars --headless window-size=1600,1200 --no-sandbox --disable-gpu]
+    options = {
+      binary: ENV['GOOGLE_CHROME_BIN'],
+      prefs: { password_manager_enable: false, credentials_enable_service: false },
+      args:  params
+    }
     url_shoe_list = "https://www.saintsavoy.com/en/product-category/ladies-shoes/"
-    b = Watir::Browser.new :chrome, headless: true
+    b = Watir::Browser.new :chrome, options: options, headless: true
     b.goto(url_shoe_list)
     s = b.select_list name: 'ppp'
     s.select '-1'
