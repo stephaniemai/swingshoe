@@ -12,6 +12,8 @@ class ScrapeSaintSavoyJob < ScrapeJob
       prefs: { password_manager_enable: false, credentials_enable_service: false },
       args:  arg
     }
+    Selenium::WebDriver::Chrome.path = ENV['GOOGLE_CHROME_SHIM'] if ENV['GOOGLE_CHROME_SHIM'].present?
+
     url_shoe_list = "https://www.saintsavoy.com/en/product-category/ladies-shoes/"
     b = Watir::Browser.new(:chrome, options: options, headless: true)
     b.goto(url_shoe_list)
