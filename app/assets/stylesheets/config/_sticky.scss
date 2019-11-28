@@ -1,0 +1,13 @@
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 11px 0 #f4f4f4 inset;
+}
+
+.sticky:before,
+.sticky:after {
+    content: '';
+    display: table;
+}

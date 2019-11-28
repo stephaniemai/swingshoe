@@ -1,0 +1,35 @@
+input[type="search"] {
+  border-radius: 8.5px;
+  box-shadow: 0 0 0 1px rgba(0,0,50,.02) inset, 0 1px 1px rgba(0,0,50,.05) inset, 0 2px 4px rgba(0,0,50,.04) inset;
+  font-size: 19px;
+  height: 56px;
+  padding: 12px 24px 14px 50px;
+  position: relative;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  -webkit-backdrop-filter: blur(15px);
+  -webkit-transition: background-color .25s ease;
+  -moz-transition: background-color .25s ease;
+  -ms-transition: background-color .25s ease;
+  -o-transition: background-color .25s ease;
+  transition: background-color .25s ease;
+}
+
+.sticky span {
+  background: url("https://russiancast.club/img/search.svg") center center no-repeat;
+  display: block;
+  height: 22px;
+  width: 22px;
+  pointer-events: none;
+  position: absolute;
+  top: 16px;
+  left: 17px;
+  z-index: 9;
+}
+
+.searchinput {
+
+}
