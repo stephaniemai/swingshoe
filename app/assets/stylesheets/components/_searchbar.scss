@@ -26,10 +26,10 @@ input[type="search"] {
   pointer-events: none;
   position: absolute;
   top: 16px;
-  left: 17px;
+  // left: 17px;
   z-index: 9;
 }
 
 .searchinput {
-
+  padding-left: 50px;
 }
