@@ -1,5 +1,5 @@
 import "bootstrap";
-import 'pagy.js.erb';
+// import "stickyfilljs";
 
-const elements = document.querySelectorAll('.sticky');
-Stickyfill.add(elements);
+// const elements = document.querySelectorAll('.sticky');
+// Stickyfill.add(elements);
