@@ -1,0 +1,8 @@
+<h1>Feedback</h1>
+<p>Swingshoe is made for you! Please tell us what you want, expect, what you miss - and maybe what you like too?</p>
+<%= simple_form_for @feedback do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :feedback, input_html: { rows: 7, style: 'width: 100%'} %>
+  <%= f.button :submit, "Send", class: "btn button btn-primary" %>
+<% end %>
