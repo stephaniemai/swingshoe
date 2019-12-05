@@ -5,8 +5,8 @@ def fetch_shoes_url(scraper)
   html_content = open(scraper.shoe_list_url).read
   doc = Nokogiri::HTML(html_content)
   shoes = doc.search(scraper.links)
-  @shoes = shoes.take(2).map do |shoe|
-  # @shoes = shoes.map do |shoe|
+  # @shoes = shoes.take(2).map do |shoe|
+  @shoes = shoes.map do |shoe|
     uri = URI.parse(shoe.attributes["href"].value)
     uri.scheme = "https"
     uri.host = scraper.host
