@@ -3,6 +3,6 @@
 <%= simple_form_for @feedback do |f| %>
   <%= f.input :name %>
   <%= f.input :email %>
-  <%= f.input :feedback %>
-  <%= f.button :submit %>
+  <%= f.input :feedback, input_html: { rows: 7, style: 'width: 100%'} %>
+  <%= f.button :submit, "Send", class: "btn button btn-primary" %>
 <% end %>

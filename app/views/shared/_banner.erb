@@ -1,3 +1,17 @@
-<div class="banner">
-    <%= link_to "Swingshoe", root_path, class: "h1"%><%= link_to "BETA", root_path, class: "beta"%>
-</div>
+<nav class="banner navbar navbar-expand-md navbar-light">
+  <%= link_to root_path, id: "logo", class: "navbar-brand" do %>
+    Swingshoe<span class="beta">BETA</span>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to "Shoes",     shoes_path,     class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "Feedback",  feedbacks_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "About",     about_path,     class: "nav-link" %></li>
+    </ul>
+  </div>
+</nav>

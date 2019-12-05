@@ -5,6 +5,11 @@
     <input type="submit" class="btn button btn-primary col-md-2 offset-md-1">
   </form>
 </div>
+<div class="row">
+  <div class="announcement">
+    The website includes 3 brands so far: <%= link_to "Slide and Swing", '/shoes?search=slide+and+swing', class: "inline-link" %>, <%= link_to "Saint-Savoy", '/shoes?search=saint+savoy', class: "inline-link" %> and <%= link_to "Swivells", '/shoes?search=swivells', class: "inline-link" %>. There are only female shoes and accessories. Please make your suggestions for our next brands and new features <%= link_to "here", feedbacks_path, class: "inline-link emphasis" %>!
+  </div>
+</div>
 <div class='cards'>
   <% @shoes.each do |shoe|%>
   <div class="card">
