@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'pages/contact', as: 'contact'
+  get 'feedbacks', to: 'feedbacks#new'
+  post 'feedbacks', to: 'feedbacks#create'
   get 'shoes', to: 'shoes#index'
   get 'shoes/:id', to: 'shoes#show'
   devise_for :users
