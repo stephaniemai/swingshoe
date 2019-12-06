@@ -1,6 +1,14 @@
 <div class="container">
   <h1>About</h1>
-  <p>As a balboa lover, I need adequate shoes to dance. A vintage look, leather soles... I started crawling the web and Facebook groups... and found myself overwhelmed by the numerous options. There are now many shoemakers dedicated to swing dance! But to pick a pair of shoe, you need to visit each of their online shop. Or attend an event where they will be at. I wanted to see everyting in one place. This is how Swingshoe was born!</p>
-  <p>If you want to know more or leave your impressions, please send me a message on the <%= link_to "Feedback form",  feedbacks_path, class: "inline-link" %> or <%= mail_to "hello.swingshoe@gmail.com", "by mail", class: "inline-link" %>.</p>
-  <!-- <a class="btn btn-flat" href="#">Apply now</a> -->
+  <div class="row content-2-col">
+    <div class="col-md-6">
+      <div class="text-2-col">
+        <p>As a balboa lover, I need adequate shoes to dance. A vintage look, leather soles... I started crawling the web and Facebook groups... and found myself overwhelmed by the numerous options. There are now many shoemakers dedicated to swing dance! But to pick a pair of shoe, you need to visit each of their online shop. Or attend an event where they will be at. I wanted to see everyting in one place. This is how Swingshoe was born!</p>
+        <p>If you want to know more or leave your impressions, please send me a message on the <%= link_to "Feedback form",  feedbacks_path, class: "inline-link" %> or <%= mail_to "hello.swingshoe@gmail.com", "by mail", class: "inline-link" %>.</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <%= image_tag "swingshoe-og-picture.jpg", alt: "balboa shoes", class: "image-2-col" %>
+    </div>
+  </div>
 </div>
